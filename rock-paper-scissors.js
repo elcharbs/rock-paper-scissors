@@ -49,3 +49,9 @@ Ask player if they want to play again
 NOTE: Read the Odin Project instructions and they suggested not to overcomplicate this one... save the work for portfolio projects
 With that in mind, just gonna follow the instructions but I'll leave the pseudocode in case I come back to this
 */
+
+function getComputerChoice () {
+    let choices = ['rock', 'paper', 'scissors'];
+    computerChoice = Math.floor(Math.random() * 3)
+    return choices[computerChoice]
+}
