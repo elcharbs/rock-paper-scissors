@@ -95,7 +95,9 @@ function game() {
     }
     if (computerScore > playerScore) {
         console.log("The computer won the game with a score of " + computerScore + " to " + playerScore)
+        return;
     } else {
         console.log("You won the game with a score of " + playerScore + " to " + computerScore)
+        return;
     }
 }
