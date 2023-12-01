@@ -52,6 +52,36 @@ With that in mind, just gonna follow the instructions but I'll leave the pseudoc
 
 function getComputerChoice () {
     let choices = ['rock', 'paper', 'scissors'];
-    computerChoice = Math.floor(Math.random() * 3)
+    let computerChoice = Math.floor(Math.random() * 3);
     return choices[computerChoice]
 }
+
+function playRound (computerChoice, playerChoice) {
+    // Change player choice to lower case for matching
+    if (playerChoice === computerChoice) {
+        console.log("Tie game, you'll need to play again.");
+        return;
+    } else if (playerChoice === 'rock' && computerChoice === 'scissors'){
+        console.log("You win! Rock beats scissors.");
+        return;
+    } else if (playerChoice === 'rock' && computerChoice === 'paper') {
+        console.log("You lose! Paper beats rock.");
+        return;
+    } else if (playerChoice === 'paper' && computerChoice === 'rock'){
+        console.log("You win! Paper beats rock.");
+        return;
+    } else if (playerChoice === 'paper' && computerChoice === 'scissors'){
+        console.log("You lose! Scissors beats paper.");
+        return;
+    } else if (playerChoice === 'scissors' && computerChoice === 'paper'){
+        console.log("You win! Scissors beats paper.");
+        return;
+    } else {
+        console.log("You lose! Rock beats scissors.")
+    }
+}
+
+const playerChoice = "rock";
+const computerChoice = getComputerChoice();
+
+console.log(playRound(playerChoice, computerChoice))
