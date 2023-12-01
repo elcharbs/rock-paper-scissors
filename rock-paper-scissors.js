@@ -46,3 +46,8 @@ Ask player if they want to play again
             Else initialize a while loop with "How about a new game now?" until answer is yes
         Else initialize while loop with "Are you sure you don't want to play?" until answer is no
 */
+
+// Initialize global variables
+let choices = ['rock', 'paper', 'scissors'];
+let computerScore = 0;
+let playerScore = 0;
