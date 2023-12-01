@@ -62,23 +62,40 @@ function playRound () {
     let computerChoice = getComputerChoice();
     if (playerChoice === computerChoice) {
         console.log("Tie game, you'll need to play again.");
-        return;
+        return computerScore, playerScore;
     } else if (playerChoice === 'rock' && computerChoice === 'scissors'){
         console.log("You win! Rock beats scissors.");
-        return;
+        return ++playerScore;
     } else if (playerChoice === 'rock' && computerChoice === 'paper') {
         console.log("You lose! Paper beats rock.");
-        return;
+        return ++computerScore;
     } else if (playerChoice === 'paper' && computerChoice === 'rock'){
         console.log("You win! Paper beats rock.");
-        return;
+        return ++playerScore;
     } else if (playerChoice === 'paper' && computerChoice === 'scissors'){
         console.log("You lose! Scissors beats paper.");
-        return;
+        return ++computerScore;
     } else if (playerChoice === 'scissors' && computerChoice === 'paper'){
         console.log("You win! Scissors beats paper.");
-        return;
+        return ++playerScore;
     } else {
         console.log("You lose! Rock beats scissors.")
+        return ++computerScore; 
+    }
+}
+
+let computerScore = 0;
+let playerScore = 0;
+
+function game() {
+    while (!(computerScore >= 5 || playerScore >= 5)) {
+        playRound()
+        console.log("Computer score: " + computerScore)
+        console.log("Player score: " + playerScore)
+    }
+    if (computerScore > playerScore) {
+        console.log("The computer won the game with a score of " + computerScore + " to " + playerScore)
+    } else {
+        console.log("You won the game with a score of " + playerScore + " to " + computerScore)
     }
 }
