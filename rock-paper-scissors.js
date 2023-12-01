@@ -56,8 +56,10 @@ function getComputerChoice () {
     return choices[computerChoice]
 }
 
-function playRound (computerChoice, playerChoice) {
+function playRound () {
     // Change player choice to lower case for matching
+    let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+    let computerChoice = getComputerChoice();
     if (playerChoice === computerChoice) {
         console.log("Tie game, you'll need to play again.");
         return;
@@ -80,8 +82,3 @@ function playRound (computerChoice, playerChoice) {
         console.log("You lose! Rock beats scissors.")
     }
 }
-
-const playerChoice = "rock";
-const computerChoice = getComputerChoice();
-
-console.log(playRound(playerChoice, computerChoice))
