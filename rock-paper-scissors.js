@@ -8,28 +8,38 @@ function playRound (buttonClicked) {
     // Change player choice to lower case for matching
     let playerChoice = buttonClicked
     let computerChoice = getComputerChoice();
-    let outcome = '';
+    let message = '';
     if (playerChoice === computerChoice) {
-        console.log("Tie game, you'll need to play again.");
+        message = `Computer chose ${computerChoice}. Tie game, you'll need to play again.`;
+        document.querySelector('.outcome').textContent = message;
     } else if (playerChoice === 'rock' && computerChoice === 'scissors'){
-        console.log("You win! Rock beats scissors.");
-        return ++playerScore;
+        message = `Computer chose ${computerChoice}. You win! Rock beats scissors.`;
+        document.querySelector('.outcome').textContent = message;
+        ++playerScore;
     } else if (playerChoice === 'rock' && computerChoice === 'paper') {
-        console.log("You lose! Paper beats rock.");
-        return ++computerScore;
+        message = `Computer chose ${computerChoice}. You lose! Paper beats rock.`;
+        document.querySelector('.outcome').textContent = message;
+        ++computerScore;
     } else if (playerChoice === 'paper' && computerChoice === 'rock'){
-        console.log("You win! Paper beats rock.");
-        return ++computerScore;
+        message = `Computer chose ${computerChoice}. You win! Paper beats rock.`;
+        document.querySelector('.outcome').textContent = message;
+        ++computerScore;
     } else if (playerChoice === 'paper' && computerChoice === 'scissors'){
-        console.log("You lose! Scissors beats paper.");
-        return ++computerScore;
+        message = `Computer chose ${computerChoice}. You lose! Scissors beats paper.`;
+        document.querySelector('.outcome').textContent = message;
+        ++computerScore;
     } else if (playerChoice === 'scissors' && computerChoice === 'paper'){
-        console.log("You win! Scissors beats paper.");
-        return ++playerScore;
+        message = `Computer chose ${computerChoice}. You win! Scissors beats paper.`;
+        document.querySelector('.outcome').textContent = message;
+        ++playerScore;
     } else {
-        console.log("You lose! Rock beats scissors.")
-        return ++computerScore;
+        message = `Computer chose ${computerChoice}. You lose! Rock beats scissors.`;
+        document.querySelector('.outcome').textContent = message;
+        ++computerScore;
     }
+    document.querySelector("#computerScore").textContent = `Computer Score = ${computerScore.toString()}`;
+    document.querySelector("#playerScore").textContent = `Player Score = ${playerScore.toString()}`;
+    return computerScore, playerScore;
 }
 
 let computerScore = 0;
