@@ -73,5 +73,21 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playRound(button.textContent.toLowerCase());
         console.log(`Computer score is ${computerScore} and player score is ${playerScore}`);
-    });
+    if (computerScore === 5 || playerScore === 5) {
+        if (computerScore > playerScore) {
+            alert(`Computer won!`);
+            computerScore = 0;
+            playerScore = 0;
+            document.querySelector("#computerScore").textContent = `Computer Score = ${computerScore.toString()}`;
+        document.querySelector("#playerScore").textContent = `Player Score = ${playerScore.toString()}`;
+        } else {
+            alert('You won!');
+            computerScore = 0;
+            playerScore = 0;
+            document.querySelector("#computerScore").textContent = `Computer Score = ${computerScore.toString()}`;
+            document.querySelector("#playerScore").textContent = `Player Score = ${playerScore.toString()}`;
+        }
+        }
+    })
 });
+
